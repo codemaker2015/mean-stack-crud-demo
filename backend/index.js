@@ -17,13 +17,12 @@ mongoose.connect('mongodb://localhost:27017/empdb',  { useNewUrlParser: true, us
    }
 )
 
-// Setting up port with express js
+// Setting up configurations
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors()); 
-// app.use(express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
-// app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
+app.use(cors());
 
+// Setting up the routes
 var employeeRoute = require('./routes/employee'); //importing route
 employeeRoute(app); //register the route
 
